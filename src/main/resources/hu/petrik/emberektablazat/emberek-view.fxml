@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="hu.petrik.emberektablazat.emberekController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.petrik.emberektablazat.emberekController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
+      <HBox fx:id="addbutton" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="nevmezo" promptText="Név" />
+            <Spinner fx:id="kormezo" />
+            <Button mnemonicParsing="false" onAction="#hozzaadClick" text="Hozzáad" />
+         </children>
+      </HBox>
       <TableView fx:id="emberek" prefHeight="200.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="nevoszlop" minWidth="50.0" prefWidth="200.0" text="Név" />
